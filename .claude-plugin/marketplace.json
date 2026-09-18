@@ -1,0 +1,16 @@
+{
+  "name": "paprika-skills",
+  "owner": {
+    "name": "fixerseven"
+  },
+  "description": "Marketplace for the Paprika skill set: reusable rules and guidance for AI-assisted work.",
+  "plugins": [
+    {
+      "name": "paprika",
+      "source": "./",
+      "description": "Paprika skills: rules and guidance that Claude and other AI assistants should follow across projects.",
+      "category": "productivity",
+      "tags": ["conventions", "rules", "guidance"]
+    }
+  ]
+}
