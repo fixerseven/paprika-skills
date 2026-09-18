@@ -28,6 +28,7 @@ durable, reusable skill files in this repository.
 ### MAY
 - Add `paths:` to the frontmatter when a skill only applies to certain file types.
 - Add supporting files such as `reference.md`, `examples.md`, or `scripts/` next to SKILL.md.
+- Import a third-party skill verbatim when its license allows it. See "Importing a third-party skill" below.
 
 ### NEVER
 - Put rules in the README instead of a skill. The README explains the repo; skills carry the rules.
@@ -51,6 +52,16 @@ When the user gives you rules or guidance:
 
 6. **Catalog.** Add or update the row in `skills/README.md`.
 7. **Commit.** One commit per skill or per coherent batch of rule changes, with a message that names the skill.
+
+## Importing a third-party skill
+
+When the user asks to copy a skill from another repository:
+
+1. **Check the license.** Only import skills whose license permits copying and redistribution (MIT, Apache 2.0, BSD, CC BY, and similar). If there is no license or it forbids redistribution, tell the user and stop.
+2. **Copy verbatim.** Copy the skill folder's files unchanged into `skills/<name>/`. Do not rewrite it into the MUST/SHOULD/MAY/NEVER format. A verbatim copy can be re-synced from upstream later.
+3. **Add `UPSTREAM.md`** in the skill folder with a table of Source URL, Path, Commit hash and date, and License holder, followed by the full upstream license text, and a "Local changes" section that says "None." until something is changed.
+4. **Keep local edits rare and logged.** If a local change is unavoidable, make it and describe it under "Local changes" so a future re-sync does not silently drop it.
+5. **Catalog and validate** as for any other skill. The validator exempts folders containing `UPSTREAM.md` from the rule-tag check but still requires the frontmatter and catalog row.
 
 ## Examples
 

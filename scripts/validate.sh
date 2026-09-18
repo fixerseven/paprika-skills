@@ -37,8 +37,12 @@ for dir in skills/*/; do
   [ "${#fm_desc}" -ge 40 ] || fail "$name: description is too short to be a useful trigger (under 40 chars)"
   [ "${#fm_desc}" -le 1024 ] || fail "$name: description longer than 1024 characters"
 
-  # Body should carry at least one strength-tagged rule.
-  if ! grep -Eq '^### (MUST|SHOULD|MAY|NEVER)$' "$file"; then
+  # Body should carry at least one strength-tagged rule. Imported skills
+  # (marked by UPSTREAM.md) keep their upstream format and are exempt.
+  if [ -f "$dir/UPSTREAM.md" ]; then
+    grep -q '^| Source ' "$dir/UPSTREAM.md" || fail "$name: UPSTREAM.md is missing the Source row"
+    grep -q '^| License ' "$dir/UPSTREAM.md" || fail "$name: UPSTREAM.md is missing the License row"
+  elif ! grep -Eq '^### (MUST|SHOULD|MAY|NEVER)$' "$file"; then
     fail "$name: no '### MUST/SHOULD/MAY/NEVER' rule sections found"
   fi
 
