@@ -30,5 +30,5 @@ it to the **Planned** table in `skills/README.md` instead of inventing rules.
 - One skill per topic. Split rather than grow a catch-all.
 - Never put rules in `README.md`. It explains the repo; skills hold the rules.
 - Never include secrets, credentials, hostnames, or personal data in a skill.
-- Bump `version` in `.claude-plugin/plugin.json` when a batch of skill changes
-  is ready for other projects to pick up.
+- Do not add a `version` field to `.claude-plugin/plugin.json`. Claude Code
+  uses the commit hash for update detection, so every push is a new version.

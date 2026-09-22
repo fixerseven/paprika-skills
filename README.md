@@ -76,6 +76,11 @@ conversational rules into skill files.
 
 ## Versioning
 
-Bump `version` in `.claude-plugin/plugin.json` when skills change in a way
-users of the plugin should pick up. Claude Code uses that version to detect
-updates.
+The plugin manifest deliberately has no `version` field. Claude Code then
+uses the commit hash to detect updates, so every push to the default branch
+is a new version. To pull it into an installed session:
+
+```text
+claude plugin update paprika@paprika-skills
+/reload-plugins
+```
