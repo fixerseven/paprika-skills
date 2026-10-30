@@ -47,6 +47,7 @@ for the catalog and load the relevant skill before starting work.
 | `skills/README.md` | Catalog of every skill and when it applies |
 | `skills/<name>/SKILL.md` | One skill per folder |
 | `templates/SKILL.md` | Starting point for a new skill |
+| `intake/` | Log and notes for sources fed in with `/watch` |
 | `scripts/validate.sh` | Checks frontmatter, naming, rule tags, and the catalog |
 | `.claude-plugin/plugin.json` | Plugin manifest |
 | `.claude-plugin/marketplace.json` | Marketplace manifest |

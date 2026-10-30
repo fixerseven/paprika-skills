@@ -24,6 +24,10 @@ you into well-formed skill files.
 If the user mentions a topic but does not give enough to write rules yet, add
 it to the **Planned** table in `skills/README.md` instead of inventing rules.
 
+When the user shares a video, talk, or transcript, or types `/watch`, load the
+`watch` skill. It fetches the text, files the rules through the process above,
+and logs the source under `intake/`.
+
 ## Conventions
 
 - Skill folders are kebab-case and match the `name` in their frontmatter.
